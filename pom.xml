@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.poc</groupId>
     <artifactId>poc-api</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <scm>
         <connection>scm:git:https://github.com/tsjahangiri/poc-api.git</connection>
         <developerConnection>scm:git:https://github.com/tsjahangiri/poc-api.git</developerConnection>
         <url>https://github.com/tsjahangiri/poc-api</url>
-        <tag>HEAD</tag>
+        <tag>poc-api-1.0.0</tag>
     </scm>
 
     <distributionManagement>
