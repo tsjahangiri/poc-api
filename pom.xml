@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.poc</groupId>
+    <artifactId>poc-api</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <scm>
+        <connection>scm:git:https://github.com/tsjahangiri/poc-api.git</connection>
+        <developerConnection>scm:git:https://github.com/tsjahangiri/poc-api.git</developerConnection>
+        <url>https://github.com/tsjahangiri/poc-api</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/tsjahangiri/poc-api</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencies>
+        <!--
+            Depends on poc-service which itself depends on poc-util.
+            Full chain: poc-util → poc-service → poc-api
+            Release order must be: poc-util, poc-service, poc-api
+        -->
+        <dependency>
+            <groupId>com.poc</groupId>
+            <artifactId>poc-service</artifactId>
+            <version>1.0.5-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.github.mavenplugins</groupId>
+                <artifactId>unleash-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>io.github.mavenplugins</groupId>
+                        <artifactId>unleash-scm-provider-git</artifactId>
+                        <version>3.3.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.poc.unleash</groupId>
+                        <artifactId>unleash-submodule-extension</artifactId>
+                        <version>1.0.6</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <tagNamePattern>
+                        @{project.artifactId}-@{project.version}
+                    </tagNamePattern>
+                    <scmMessagePrefix>[unleash-release]</scmMessagePrefix>
+                    <allowLocalReleaseArtifacts>false</allowLocalReleaseArtifacts>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
