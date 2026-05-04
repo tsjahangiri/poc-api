@@ -3,14 +3,14 @@
 
     <groupId>com.poc</groupId>
     <artifactId>poc-api</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
 
     <scm>
         <connection>scm:git:https://github.com/tsjahangiri/poc-api.git</connection>
         <developerConnection>scm:git:https://github.com/tsjahangiri/poc-api.git</developerConnection>
         <url>https://github.com/tsjahangiri/poc-api</url>
-        <tag>HEAD</tag>
+        <tag>poc-api-1.0.5</tag>
     </scm>
 
     <distributionManagement>
